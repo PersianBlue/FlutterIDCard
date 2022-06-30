@@ -13,6 +13,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+        theme: ThemeData(fontFamily: "Arial"),
         home: Scaffold(
             appBar: AppBar(),
             body: Container(
@@ -98,7 +99,7 @@ class MyApp extends StatelessWidget {
                           ),
                           SizedBox(height: 10.0),
                           Text(
-                            "Matthew-Daniel Romario Kristoff",
+                            "Matthew-Daniel R.K.",
                             style: TextStyle(fontWeight: FontWeight.bold),
                           ),
                         ],
@@ -110,31 +111,33 @@ class MyApp extends StatelessWidget {
                       padding: EdgeInsets.all(4.0),
                       color: Color.fromARGB(255, 252, 228, 10),
                       child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
                         children: [
                           Expanded(
                             flex: 1,
                             child: Column(
+                              mainAxisAlignment: MainAxisAlignment.start,
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Text("620101234",
-                                    style:
-                                        TextStyle(fontWeight: FontWeight.bold)),
-                                SizedBox(height: 10.0),
+                                    style: TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 24.0)),
+                                SizedBox(height: 20.0),
                                 Text("Faculty of Science and Technology",
                                     style:
                                         TextStyle(fontWeight: FontWeight.bold)),
                                 SizedBox(
-                                  height: 15.0,
+                                  height: 25.0,
                                 ),
                                 Text("Undergraduate",
                                     style:
                                         TextStyle(fontWeight: FontWeight.bold)),
-                                SizedBox(height: 10.0),
+                                SizedBox(height: 20.0),
                                 Text("Taylor Hall",
                                     style:
                                         TextStyle(fontWeight: FontWeight.bold)),
-                                SizedBox(height: 15.0),
+                                SizedBox(height: 25.0),
                                 Text("Exp 07/31/2023",
                                     style:
                                         TextStyle(fontWeight: FontWeight.bold)),
@@ -144,6 +147,9 @@ class MyApp extends StatelessWidget {
                                         TextStyle(fontWeight: FontWeight.bold)),
                               ],
                             ),
+                          ),
+                          SizedBox(
+                            width: 10.0,
                           ),
                           Expanded(
                             flex: 1,
@@ -162,12 +168,12 @@ class MyApp extends StatelessWidget {
                                 Text("Signature",
                                     style:
                                         TextStyle(fontWeight: FontWeight.bold)),
-                                Text("MDWhite",
+                                Text("White,MD",
                                     style: TextStyle(
                                         // fontStyle: FontStyle.italic,
-                                        fontWeight: FontWeight.w900,
-                                        fontSize: 18.0,
-                                        fontFamily: "Scriptina"))
+                                        fontWeight: FontWeight.w700,
+                                        fontSize: 26.0,
+                                        fontFamily: "Kunstler Script"))
                               ],
                             ),
                           )
