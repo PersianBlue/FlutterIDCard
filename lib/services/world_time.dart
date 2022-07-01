@@ -25,13 +25,18 @@ class WorldTime {
       Map data = jsonDecode(response.body);
       //get property from data
       String datetime = data['datetime'];
+      print("Date time in getTime(): $datetime");
       // Create DateTime object
       DateTime now = DateTime.parse(datetime);
+      String offset = data['utc_offset'].substring(0, 3);
+      now = now.add(Duration(hours: int.parse(offset)));
 
+      print(offset);
+      // now = now.add(Duration(hours: data["offset"].subString(1, 3)));
       isDayTime = now.hour > 6 && now.hour < 20 ? true : false;
       //set the time property
       time = DateFormat.jm().format(now);
-      // print(time);
+      print(" Time in getTime(): $time");
     } catch (e) {
       print("Error! $e ");
       time = "{Error: Could not get time data}";

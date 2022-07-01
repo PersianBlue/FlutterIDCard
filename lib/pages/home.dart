@@ -13,6 +13,7 @@ class HomeState extends State<Home> {
   Map data = {};
   @override
   Widget build(BuildContext context) {
+    print(data.isNotEmpty);
     data = data.isNotEmpty
         ? data
         : ModalRoute.of(context)?.settings.arguments as Map;
