@@ -1,8 +1,8 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors, prefer_const_constructors_in_immutables, use_key_in_widget_constructors, avoid_print
 
 import 'package:flutter/material.dart';
-import 'quote.dart';
-import 'quote_card.dart';
+import 'package:flutter_apps/QuoteFiles/quote.dart';
+import 'package:flutter_apps/QuoteFiles/quote_card.dart';
 
 void main() {
   runApp(MaterialApp(
@@ -33,23 +33,30 @@ class _QuoteListState extends State<QuoteList> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Colors.grey[200],
-        appBar: AppBar(
-          title: Text("Awesome quotes"),
-          centerTitle: true,
-          backgroundColor: Colors.redAccent,
-        ),
-        body: Column(
+      backgroundColor: Colors.grey[200],
+      appBar: AppBar(
+        title: Text("Awesome quotes"),
+        centerTitle: true,
+        backgroundColor: Colors.redAccent,
+      ),
+      body: Row(
+        children: [
+          Column(
             children: quotes.map((quote) {
-          return QuoteCard(
-              quote: quote,
-              padding: 24.0,
-              delete: () {
-                setState(() {
-                  quotes.remove(quote);
-                  print("Love");
-                });
-              });
-        }).toList()));
+              return QuoteCard(
+                  quote: quote,
+                  padding: 24.0,
+                  delete: () {
+                    setState(() {
+                      quotes.remove(quote);
+                      print("Love");
+                    });
+                  });
+            }).toList(),
+          ),
+          
+        ],
+      ),
+    );
   }
 }
